@@ -36,6 +36,9 @@ Console.Write("Введите размеры матрицы: ");
 int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
 int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
-Console.Write("Введите i j искомого элемента: ");
+Console.Write("Введите позицию искомого элемента: ");
 int[] ij = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
-Console.WriteLine(FindElement(matrix, ij[0], ij[1]));
+// Console.WriteLine(FindElement(matrix, ij[0], ij[1]));
+if (ij[0]<matrix.GetLength(0) && ij[1]<matrix.GetLength(1))
+Console.WriteLine(matrix[ij[0],ij[1]]);
+else Console.WriteLine("Такого числа в массиве нет");
